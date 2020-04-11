@@ -5,9 +5,6 @@
         Index Component
     </div>
 </template>
-<script>
-    export default {}
-</script>
 
 <template>
     <div>
@@ -42,27 +39,24 @@
 </template>
 
 <script>
-    data()
-    {
-        return {
-            items: []
+    export default {
+        data() {
+            return {
+                items: []
+            }
+        },
+
+        created: function () {
+            this.fetchItems();
+        },
+        methods: {
+            fetchItems() {
+                let uri = 'http://localhost:4000/items';
+                this.axios.get(uri).then((response) => {
+                    this.items = response.data;
+                });
+            }
         }
     }
-    ,
 
-    created: function () {
-        this.fetchItems();
-    }
-    ,
-
-    {
-        fetchItems()
-        {
-            let uri = 'http://localhost:4000/items';
-            this.axios.get(uri).then((response) => {
-                this.items = response.data;
-            });
-        }
-    }
-    }
 </script>
