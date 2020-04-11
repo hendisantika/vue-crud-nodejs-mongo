@@ -1,4 +1,12 @@
 // Create.vue
+<template>
+    <div>
+        Create Component
+    </div>
+</template>
+<script>
+    export default {}
+</script>
 
 <template>
     <div class="container">
