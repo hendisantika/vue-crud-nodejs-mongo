@@ -53,6 +53,7 @@
 
             updateItem() {
                 let uri = 'http://localhost:4000/items/update/' + this.$route.params.id;
+                // eslint-disable-next-line no-unused-vars
                 this.axios.post(uri, this.item).then((response) => {
                     this.$router.push({name: 'Index'});
                 });

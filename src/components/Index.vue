@@ -21,6 +21,7 @@
             </thead>
 
             <tbody>
+            <!--            <tr :key="item._id" v-for="item in items">-->
             <tr :key="item._id" v-for="item in items">
                 <td>{{ item._id }}</td>
                 <td>{{ item.name }}</td>
@@ -30,7 +31,7 @@
                     </router-link>
                 </td>
                 <td>
-                    <button class="btn btn-danger">Delete</button>
+                    <button class="btn btn-danger" v-on:click="deleteItem(item._id)">Delete</button>
                 </td>
             </tr>
             </tbody>
