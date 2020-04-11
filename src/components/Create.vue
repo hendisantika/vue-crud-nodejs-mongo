@@ -18,11 +18,11 @@
                 <form v-on:submit.prevent="addItem">
                     <div class="form-group">
                         <label>Item Name:</label>
-                        <input class="form-control" type="text"/>
+                        <input class="form-control" type="text" v-model="item.name"/>
                     </div>
                     <div class="form-group">
                         <label>Item Price:</label>
-                        <input class="form-control" type="text"/>
+                        <input class="form-control" type="text" v-model="item.price"/>
                     </div>
                     <div class="form-group">
                         <input class="btn btn-primary" type="submit" value="Add Item"/>
@@ -37,6 +37,19 @@
     export default {
         components: {
             name: 'AddItem'
+        },
+        data() {
+            return {
+                item: {}
+            }
+        },
+        methods: {
+            addItem() {
+                let uri = 'http://localhost:4000/items/add';
+                this.axios.post(uri, this.item).then((response) => {
+                    console.log(response.data)
+                });
+            }
         }
     }
 </script>
