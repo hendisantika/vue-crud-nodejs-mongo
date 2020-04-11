@@ -1,20 +1,23 @@
 <template>
-  <transition name="fade">
-    <router-view></router-view>
-  </transition>
+    <transition name="fade">
+        <div class="container">
+            <router-view></router-view>
+        </div>
+    </transition>
 </template>
+
 
 <script>
 
-  export default {}
+    export default {}
 </script>
 
 <style>
-  .fade-enter-active, .fade-leave-active {
-    transition: opacity .5s
-  }
+    .fade-enter-active, .fade-leave-active {
+        transition: opacity .5s
+    }
 
-  .fade-enter, .fade-leave-active {
-    opacity: 0
-  }
+    .fade-enter, .fade-leave-active {
+        opacity: 0
+    }
 </style>
